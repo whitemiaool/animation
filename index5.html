@@ -141,8 +141,10 @@
                     if (this.pr > 4&&this.pr < 10) {
                         this.opt.speed = 1;
                     }
-                    if (this.pr > 10) {
-                        this.opt.speed = 20;
+                    if(!this.opt.sup) {
+                        if (this.pr > 10) {
+                            this.opt.speed = 20;
+                        }
                     }
                 }
                 console.log(this.px, this.py);
@@ -202,55 +204,19 @@
                 };
                 stars.push(star);
             }
-        stars.push(new makerstars({x: (canvas.width/2)+40,y: (canvas.height/2)-10,z: canvas.width/2,o: 1,color: `rgb(55, 251, 251)`,img: null,speed: 10,add:0,radd:0,gravity:1,rgravity:0.1,ky:5,kx:4,r:3,drection:0}))
-        stars.push(new makerstars({x: (canvas.width/2)+10,y: (canvas.height/2)-40,z: canvas.width/2,o: 1,color: `rgb(55, 251, 251)`,img: null,speed: 10,add:0,radd:0,gravity:1,rgravity:0.1,ky:5,kx:4,r:2,drection:1}))
-        stars.push(new makerstars({x: (canvas.width/2)-10,y: (canvas.height/2)+40,z: canvas.width/2,o: 1,color: `rgb(255, 251, 255)`,img: null,speed: 4,add:0,radd:0,gravity:1,rgravity:0.1,ky:6,kx:-10,r:2,drection:0}))
-        stars.push(new makerstars({x: canvas.width/2+10,y: canvas.height/2-10,z: canvas.width/2,o: 1,color: 'rgb(255, 210, 48)',img: null,speed: 5,add:0,radd:0,gravity:1,rgravity:1,ky:-5,kx:10,r:1,drection:0,
-            cb:()=>{
-                stars.push(new makerstars({x: (canvas.width/2)-40,y: (canvas.height/2)-10,z: canvas.width/2,o: 1,color: `rgb(55, 251, 251)`,img: null,speed: 10,add:0,radd:0,gravity:1,rgravity:0.1,ky:-5,kx:-4,r:3,drection:0}))
-                
-            }}))
-        // stars.push(new makerstars({
-        //     x: canvas.width/2-200,
-        //     y: canvas.height/2-100,
-        //     z: canvas.width/2,
-        //     o: 1,
-        //     color: '#fff',
-        //     img: 5,
-        //     speed: 5,
-        //     add:0,
-        //     radd:0,
-        //     gravity:1.5,
-        //     rgravity:0.3
-        // }))
-        
-        // stars.push(new makerstars({
-        //     x: canvas.width/2-1,
-        //     y: canvas.height/2-100,
-        //     z: canvas.width/2,
-        //     o: 1,
-        //     color: '#fff',
-        //     img: null,
-        //     speed: 5,
-        //     add:0,
-        //     radd:0,
-        //     gravity:1.5,
-        //     rgravity:0.3
-        // }))
-        // stars.push(new makerstars({
-        //     x: canvas.width/2-1,
-        //     y: canvas.height/2+100,
-        //     z: canvas.width/2,
-        //     o: 1,
-        //     color: '#fff',
-        //     img: null,
-        //     speed: 5,
-        //     add:0,
-        //     radd:0,
-        //     gravity:2,
-        //     rgravity:0.4
-        // }))
+        // stars.push(new makerstars({x: (canvas.width/2)+40,y: (canvas.height/2)-10,z: canvas.width/2,o: 1,color: `rgb(55, 251, 251)`,img: null,speed: 10,add:0,radd:0,gravity:1,rgravity:0.1,ky:5,kx:4,r:3,drection:0}))            
+        stars.push(new makerstars({x: (canvas.width/2)-0.1*(canvas.width/2),y: (canvas.height/2)-0.4*(canvas.height/2),z: canvas.width,o: 1,color: `rgb(55, 251, 251)`,img: null,speed: 0.001,add:0,radd:0,gravity:0.3,rgravity:0.1,ky:-4,kx:20,r:3,drection:0}))
+        stars.push(new makerstars({x: (canvas.width/2)+0.5*(canvas.width/2),y: (canvas.height/2)-0.1*(canvas.height/2),z: canvas.width,o: 1,color: `rgb(55, 251, 251)`,img: null,speed:1,add:0,radd:0,gravity:0.3,rgravity:0.1,ky:-8,kx:-20,r:3,drection:0,sup:true}))
+        stars.push(new makerstars({x: (canvas.width/2)-0.1*(canvas.width/2),y: (canvas.height/2)-0.1*(canvas.height/2),z: canvas.width,o: 1,color: `rgb(55, 251, 251)`,img: null,speed:1,add:0,radd:0,gravity:0.3,rgravity:0.1,ky:8,kx:20,r:3,drection:0,sup:true}))
 
+
+        // stars.push(new makerstars({x: (canvas.width/2)+40,y: (canvas.height/2)-10,z: canvas.width/2,o: 1,color: `rgb(55, 251, 251)`,img: null,speed: 10,add:0,radd:0,gravity:1,rgravity:0.1,ky:5,kx:4,r:3,drection:0}))
+        // stars.push(new makerstars({x: (canvas.width/2)+10,y: (canvas.height/2)-40,z: canvas.width/2,o: 1,color: `rgb(55, 251, 251)`,img: null,speed: 10,add:0,radd:0,gravity:1,rgravity:0.1,ky:5,kx:4,r:2,drection:1}))
+        // stars.push(new makerstars({x: (canvas.width/2)-10,y: (canvas.height/2)+40,z: canvas.width/2,o: 1,color: `rgb(255, 251, 255)`,img: null,speed: 4,add:0,radd:0,gravity:1,rgravity:0.1,ky:6,kx:-10,r:2,drection:0}))
+        // stars.push(new makerstars({x: canvas.width/2+10,y: canvas.height/2-10,z: canvas.width/2,o: 1,color: 'rgb(255, 210, 48)',img: null,speed: 5,add:0,radd:0,gravity:1,rgravity:1,ky:-5,kx:10,r:1,drection:0,
+        //     cb:()=>{
+        //         stars.push(new makerstars({x: (canvas.width/2)-40,y: (canvas.height/2)-10,z: canvas.width/2,o: 1,color: `rgb(55, 251, 251)`,img: null,speed: 10,add:0,radd:0,gravity:1,rgravity:0.1,ky:-5,kx:-4,r:3,drection:0})) 
+        //     }}))
         }
 
         function moveStars() {
